@@ -65,11 +65,13 @@
 
   /* Step indicator */
   .step-indicator { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin:0 0 36px; padding:0; list-style:none; }
-  .step-indicator .step-item { display:flex; align-items:baseline; gap:8px; padding-bottom:10px; border-bottom:2px solid var(--line); color:var(--text-muted); font-size:13px; line-height:1.35; }
-  .step-indicator .step-item::before { content:""; flex:none; width:8px; height:8px; box-sizing:border-box; border:1px solid var(--line-strong); border-radius:50%; }
+  .step-indicator .step-item { position:relative; display:flex; align-items:flex-start; gap:8px; padding-bottom:10px; border-bottom:2px solid var(--line); color:var(--text-muted); font-size:13px; line-height:1.35; }
+  .step-indicator .step-item::before { content:""; flex:none; width:10px; height:10px; margin-top:3px; border:1px solid var(--line-strong); border-radius:50%; }
   .step-indicator [aria-current="step"] { border-color:var(--navy); color:var(--navy); font-weight:600; }
   .step-indicator [aria-current="step"]::before { border:2px solid var(--navy); }
-  .step-indicator .done::before { border-color:var(--blue-bright); background:var(--blue-bright); }
+  .step-indicator .done { border-color:var(--blue-bright); color:var(--navy); }
+  .step-indicator .done::before { border-color:var(--blue-tint); background:var(--blue-tint); }
+  .step-indicator .done::after { content:""; position:absolute; top:5px; left:4px; width:3px; height:5px; border:solid var(--navy); border-width:0 1px 1px 0; transform:rotate(45deg); }
 
   /* Steps */
   .step { display:none; }
