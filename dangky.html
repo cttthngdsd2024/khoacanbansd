@@ -86,8 +86,9 @@
   /* Success screen */
   .success-screen { display:none; text-align:center; padding:48px 24px; }
   .success-screen.active { display:block; }
+  .kcb:has(> .success-screen.active) > header { border-bottom:0; }
   .success-screen .success-icon { font-size:72px; color:var(--navy); margin-bottom:20px; }
-  .success-screen h2 { color:var(--navy); font-size:22px; font-weight:600; margin:0 0 12px; }
+  .kcb .success-screen h2 { color:var(--navy); font-size:22px; font-weight:600; margin:0 0 12px; border-top:0; }
   .success-screen p { color:var(--text-body); font-size:15px; margin:0; line-height:1.7; }
 
   @media (max-width:640px) {
